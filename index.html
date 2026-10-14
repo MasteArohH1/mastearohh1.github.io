@@ -51,10 +51,13 @@
             <!-- Reemplaza el enlace de YouTube por el de tu último vídeo -->
             <iframe class="media-destacado" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
         </div>
+        
+        <!-- Tarjeta de Último Dibujo vinculada al Mural -->
         <div class="tarjeta-destacada">
-            <h3 class="titulo-destacado">🎨 Último Dibujo</h3>
-            <!-- Reemplaza 'dibujo1.jpg' por la imagen de tu último dibujo -->
-            <img src="dibujo1.jpg" alt="Último dibujo de MasteArohH" class="media-destacado">
+            <a href="mural.html" style="text-decoration: none; color: inherit;">
+                <h3 class="titulo-destacado">🎨 Último Dibujo (Ver Mural)</h3>
+                <img id="imagenUltimoDibujo" src="dibujo1.jpg" alt="Último dibujo de MasteArohH" class="media-destacado">
+            </a>
         </div>
     </section>
 
@@ -81,6 +84,38 @@
     <footer class="pie-pagina">
         <p class="texto-copyright">&copy; 2026 MasteArohH</p>
     </footer>
+
+    <!-- Script para cargar automáticamente la última imagen del mural -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("./dibujos/lista_dibujos.json")
+                .then(res => res.json())
+                .then(carpetas => {
+                    const promesas = carpetas.map(carpeta => 
+                        fetch(`./dibujos/${carpeta}/info.json`)
+                            .then(res => res.json())
+                            .then(data => ({
+                                ...data,
+                                rutaImagen: `./dibujos/${carpeta}/${data.archivo}`
+                            }))
+                    );
+                    return Promise.all(promesas);
+                })
+                .then(dibujos => {
+                    // Ordenar por fecha descendente (más nuevo primero)
+                    dibujos.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+                    
+                    if (dibujos.length > 0) {
+                        const imgElem = document.getElementById("imagenUltimoDibujo");
+                        imgElem.src = dibujos[0].rutaImagen;
+                        imgElem.alt = dibujos[0].titulo;
+                    }
+                })
+                .catch(err => {
+                    console.log("No se pudo cargar la vista previa automática del mural:", err);
+                });
+        });
+    </script>
 
 </body>
 </html>
