@@ -4,13 +4,43 @@
     <meta charset="UTF-8">
     <title>Página Oficial de MasteArohH</title>
 </head>
-<body>
+<body class="pagina-inicio">
 
-    <h1>MasteArohH</h1>
+    <header class="encabezado-principal">
+        <h1 class="titulo-canal">MasteArohH</h1>
+        <p class="subtitulo-canal">¡Bienvenido a la página oficial de MasteArohH!, aquí podrás ver un poco de todo sobre MasteArohH, sean videos nuevos, redes sociales y comunicados importantes.</p>
 
-    <a href="info.html"><button class="info-boton">información</button></a>
-    <a href="about.html"><button class="about-boton">quién es</button></a>
-    <a href="thewaytobe.html"><button class="thewaytobe-boton">?</button></a>
+        <nav class="menu-navegacion">
+            <a href="info.html" class="enlace-nav"><button class="boton-nav info-boton">Información</button></a>
+            <a href="about.html" class="enlace-nav"><button class="boton-nav about-boton">Sobre MasteArohH</button></a>
+            <a href="videos.html" class="enlace-nav"><button class="boton-nav videos-boton">Videos recientes</button></a>
+            <a href="mural.html" class="enlace-nav"><button class="boton-nav mural-boton">Mural de dibujos</button></a>
+            <a href="posts.html" class="enlace-nav"><button class="boton-nav posts-boton">Publicaciones</button></a>
+        </nav>
+    </header>
+
+    <main class="contenido-principal">
+        <section class="seccion-bio">
+            <h2 class="titulo-seccion">Bio & Notas</h2>
+            <p class="texto-bio">Hola, soy <strong class="nombre-destacado">MasteArohH</strong>. Bienvenido/a a mi página personal. Aquí subo mis proyectos, videos destacados, dibujos (fan arts) y notas sobre lo que voy haciendo y otras pendejadas.</p>
+            <p class="nota-rapida"><strong class="etiqueta-nota">Nota:</strong> Esta es una nota</p>
+        </section>
+
+        <section class="seccion-contacto">
+            <h2 class="titulo-seccion">📬 Envíame un mensaje anónimo</h2>
+            <p class="descripcion-contacto">¿Tienes alguna sugerencia, nota o comentario? Escríbelo aquí abajo anonimamente:</p>
+            
+            <form action="https://formspree.io/f/mqpegzrz" method="POST" class="formulario-anonimo">
+                <label for="mensaje" class="etiqueta-campo">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" class="campo-texto" placeholder="Escribe tu mensaje anónimo aquí..." required></textarea><br><br>
+                <button type="submit" class="boton-enviar">Enviar Mensaje (Anónimo)</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <p class="texto-copyright">&copy; 2026 MasteArohH</p>
+    </footer>
 
 </body>
 </html>
