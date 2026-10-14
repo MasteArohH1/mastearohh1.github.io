@@ -1,0 +1,128 @@
+/* ==========================================
+   PATRÓN EN MOZAICO TIPO AJEDREZ ANIMADO
+   ========================================== */
+body {
+  margin: 0;
+  padding: 0;
+  /* Fondo base azul oscuro con degradado repetitivo estilo ajedrez */
+  background-color: #0b132b;
+  background-image: 
+    linear-gradient(45deg, rgba(28, 37, 65, 0.4) 25%, transparent 25%, transparent 75%, rgba(28, 37, 65, 0.4) 75%),
+    linear-gradient(45deg, rgba(28, 37, 65, 0.4) 25%, transparent 25%, transparent 75%, rgba(28, 37, 65, 0.4) 75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  animation: moverAjedrez 15s linear infinite;
+}
+
+@keyframes moverAjedrez {
+  0% {
+    background-position: 0 0, 30px 30px;
+  }
+  100% {
+    background-position: 600px 600px, 630px 630px;
+  }
+}
+
+/* ==========================================
+   TOPBAR FIJA (BARRA SUPERIOR DESPLEGABLE)
+   ========================================== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #1c2541;
+  border-bottom: 3px solid #48cae4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.topbar-logo {
+  font-family: "Candal", sans-serif;
+  color: #48cae4;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.topbar-enlace {
+  color: #caf0f8;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.topbar-enlace:hover {
+  color: #48cae4;
+}
+
+/* Menú desplegable con HTML <details> y <summary> */
+.topbar-desplegable {
+  position: relative;
+}
+
+.topbar-desplegable summary {
+  color: #caf0f8;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none; /* Oculta la flecha por defecto del navegador */
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.topbar-desplegable summary::-webkit-details-marker {
+  display: none;
+}
+
+.topbar-desplegable summary::after {
+  content: " ▼";
+  font-size: 0.8rem;
+  color: #48cae4;
+  transition: transform 0.2s;
+}
+
+.topbar-desplegable[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.topbar-menu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background-color: #1c2541;
+  border: 2px solid #48cae4;
+  border-radius: 10px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.topbar-menu a {
+  color: #caf0f8;
+  text-decoration: none;
+  padding: 8px 15px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.topbar-menu a:hover {
+  background-color: #0e1a38;
+  color: #48cae4;
+}
