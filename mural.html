@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural de Dibujos - MasteArohH</title>
+    <!-- Plantilla Global (Topbar y Fondo Animado de Ajedrez) -->
+    <link rel="stylesheet" href="global.css">
+    <!-- Estilos específicos del Mural -->
+    <link rel="stylesheet" href="mural.css">
+</head>
+<body class="pagina-mural">
+
+    <!-- BARRA SUPERIOR (TOPBAR) -->
+    <header class="topbar">
+        <a href="index.html" class="topbar-logo">MasteArohH</a>
+        <nav class="topbar-nav">
+            <a href="index.html" class="topbar-enlace">Página Principal</a>
+            <details class="topbar-desplegable">
+                <summary>Contenido</summary>
+                <div class="topbar-menu">
+                    <a href="about.html">¿Quién es MasteArohH?</a>
+                    <a href="info.html">Información</a>
+                    <a href="videos.html">Videos recientes</a>
+                    <a href="mural.html">Dibujos recientes</a>
+                    <a href="posts.html">Publicaciones</a>
+                </div>
+            </details>
+        </nav>
+    </header>
+
+    <!-- CABECERA DE LA PÁGINA -->
+    <section class="encabezado-mural">
+        <h1 class="titulo-mural">🎨 Mural de Dibujos</h1>
+        <p class="subtitulo-mural">Galería de dibujos tanto creados por MasteArohH como de la comunidad. ¡Haz clic en un dibujo para ver sus detalles!</p>
+    </section>
+
+    <!-- CUADRÍCULA DE DIBUJOS (Cargados dinámicamente) -->
+    <main class="galeria-mural" id="galeriaMural">
+        <!-- Los cuadros de dibujos se insertan automáticamente desde JS -->
+    </main>
+
+    <!-- MODAL / FRAME POPUP PARA DETALLES Y ZOOM -->
+    <div id="modalDibujo" class="modal-overlay">
+        <div class="modal-contenedor">
+            <button class="modal-cerrar" id="btnCerrarModal">&times;</button>
+            
+            <!-- Visor de imagen con controles de zoom -->
+            <div class="modal-visor">
+                <img id="modalImagen" src="" alt="Dibujo ampliado">
+                <div class="controles-zoom">
+                    <button id="btnZoomIn">+</button>
+                    <button id="btnZoomReset">Reset</button>
+                    <button id="btnZoomOut">-</button>
+                </div>
+            </div>
+
+            <!-- Panel de información -->
+            <div class="modal-info">
+                <h2 id="modalTitulo">Título del Dibujo</h2>
+                <p class="modal-autor"><strong>Autor:</strong> <span id="modalAutor">Nombre</span></p>
+                <p class="modal-fecha"><strong>Fecha:</strong> <span id="modalFecha">00/00/0000</span></p>
+                <hr>
+                <p class="modal-descripcion" id="modalDescripcion">Descripción aquí...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pie-pagina">
+        <p class="texto-copyright">&copy; 2026 MasteArohH</p>
+    </footer>
+
+    <!-- Script para cargar dibujos y controlar el modal -->
+    <script src="mural.js"></script>
+</body>
+</html>
