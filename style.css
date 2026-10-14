@@ -1,26 +1,17 @@
-/* ==========================================
-   IMPORTACIÓN DE FUENTES DE GOOGLE FONTS
-   ========================================== */
 @import url("https://fonts.googleapis.com/css2?family=Candal&family=Acme&display=swap");
 
-/* ==========================================
-   VARIABLES Y PALETA DE COLORES (Azul y Celeste)
-   ========================================== */
 :root {
-  --fondo-principal: #0b132b;        /* Azul noche muy oscuro */
-  --fondo-tarjeta: #1c2541;          /* Azul marino profundo */
-  --fondo-campo: #0e1a38;            /* Azul medio para inputs */
-  --celeste-brillante: #48cae4;     /* Celeste principal */
-  --celeste-hover: #90e0ef;         /* Celeste claro para hover */
-  --azul-acento: #0077b6;            /* Azul medio para detalles */
-  --texto-blanco: #f8f9fa;           /* Blanco suave */
-  --texto-secundario: #caf0f8;       /* Celeste pastel suave para textos */
+  --fondo-principal: #0b132b;
+  --fondo-tarjeta: #1c2541;
+  --fondo-campo: #0e1a38;
+  --celeste-brillante: #48cae4;
+  --celeste-hover: #90e0ef;
+  --azul-acento: #0077b6;
+  --texto-blanco: #f8f9fa;
+  --texto-secundario: #caf0f8;
   --sombra: rgba(0, 0, 0, 0.4);
 }
 
-/* ==========================================
-   ESTILOS GENERALES Y BASE
-   ========================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -28,25 +19,21 @@
 }
 
 body.pagina-inicio {
-  background-color: var(--fondo-principal);
   color: var(--texto-blanco);
   font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
   line-height: 1.6;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
 }
 
-/* ==========================================
-   ENCABEZADO Y NAVEGACIÓN
-   ========================================== */
+/* ENCABEZADO Y NAVEGACIÓN */
 .encabezado-principal {
   text-align: center;
-  width: 100%;
+  width: 90%;
   max-width: 900px;
-  margin-bottom: 30px;
+  margin: 25px 0 20px 0;
   padding: 30px 20px;
   background-color: var(--fondo-tarjeta);
   border-radius: 16px;
@@ -60,18 +47,15 @@ body.pagina-inicio {
   color: var(--celeste-brillante);
   text-shadow: 0 0 12px rgba(72, 202, 228, 0.4);
   margin-bottom: 10px;
-  letter-spacing: 1px;
 }
 
 .subtitulo-canal {
-  font-family: 'Trebuchet MS', sans-serif;
   color: var(--texto-secundario);
   font-size: 1.05rem;
   max-width: 750px;
   margin: 0 auto 25px auto;
 }
 
-/* Menú de Botones de Navegación */
 .menu-navegacion {
   display: flex;
   flex-wrap: wrap;
@@ -93,21 +77,55 @@ body.pagina-inicio {
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .boton-nav:hover {
   background-color: var(--celeste-hover);
   border-color: var(--celeste-hover);
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(72, 202, 228, 0.4);
 }
 
-/* ==========================================
-   CONTENIDO PRINCIPAL Y SECCIONES
-   ========================================== */
-.contenido-principal {
+/* CONTENEDOR DESTACADOS HORIZONTALES (Último Video y Último Dibujo) */
+.contenedor-destacados {
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.tarjeta-destacada {
+  flex: 1;
+  background-color: var(--fondo-tarjeta);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 15px var(--sombra);
+  border-top: 4px solid var(--celeste-brillante);
+  text-align: center;
+}
+
+.titulo-destacado {
+  font-family: 'Arial Black', sans-serif;
+  color: var(--celeste-brillante);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.media-destacado {
   width: 100%;
+  border-radius: 10px;
+  background-color: var(--fondo-campo);
+  object-fit: cover;
+}
+
+iframe.media-destacado {
+  height: 200px;
+  border: none;
+}
+
+/* CONTENIDO PRINCIPAL */
+.contenido-principal {
+  width: 90%;
   max-width: 900px;
   display: flex;
   flex-direction: column;
@@ -124,7 +142,7 @@ body.pagina-inicio {
 }
 
 .titulo-seccion {
-  font-family: 'Arial Black', 'Arial Bold', sans-serif;
+  font-family: 'Arial Black', sans-serif;
   color: var(--celeste-brillante);
   font-size: 1.5rem;
   margin-bottom: 15px;
@@ -132,7 +150,6 @@ body.pagina-inicio {
 
 .texto-bio,
 .descripcion-contacto {
-  font-family: 'Trebuchet MS', sans-serif;
   color: var(--texto-secundario);
   font-size: 1.05rem;
   margin-bottom: 12px;
@@ -140,7 +157,6 @@ body.pagina-inicio {
 
 .nombre-destacado {
   color: var(--celeste-hover);
-  font-weight: bold;
 }
 
 .nota-rapida {
@@ -148,27 +164,20 @@ body.pagina-inicio {
   padding: 10px 15px;
   border-radius: 8px;
   border-left: 3px solid var(--celeste-brillante);
-  color: var(--texto-blanco);
-  font-size: 0.95rem;
 }
 
 .etiqueta-nota {
   color: var(--celeste-brillante);
 }
 
-/* ==========================================
-   FORMULARIO DE CONTACTO ANÓNIMO
-   ========================================== */
+/* FORMULARIO */
 .formulario-anonimo {
   margin-top: 15px;
 }
 
 .etiqueta-campo {
-  font-family: 'Trebuchet MS', sans-serif;
   color: var(--celeste-brillante);
   font-weight: bold;
-  display: inline-block;
-  margin-bottom: 8px;
 }
 
 .campo-texto {
@@ -183,16 +192,11 @@ body.pagina-inicio {
   font-size: 1rem;
   resize: vertical;
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .campo-texto:focus {
   border-color: var(--celeste-brillante);
   box-shadow: 0 0 10px rgba(72, 202, 228, 0.3);
-}
-
-.campo-texto::placeholder {
-  color: #6c757d;
 }
 
 .boton-enviar {
@@ -204,28 +208,23 @@ body.pagina-inicio {
   padding: 12px 25px;
   border-radius: 25px;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
   margin-top: 5px;
 }
 
 .boton-enviar:hover {
   background-color: var(--celeste-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(72, 202, 228, 0.4);
 }
 
-/* ==========================================
-   PIE DE PÁGINA
-   ========================================== */
 .pie-pagina {
-  margin-top: 40px;
-  padding: 15px;
+  margin: 30px 0;
   text-align: center;
   color: var(--texto-secundario);
   font-size: 0.9rem;
 }
 
-.texto-copyright {
-  font-family: 'Trebuchet MS', sans-serif;
-  opacity: 0.8;
+/* Adaptación para pantallas de teléfonos */
+@media (max-width: 650px) {
+  .contenedor-destacados {
+    flex-direction: column;
+  }
 }
