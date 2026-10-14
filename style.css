@@ -1,0 +1,63 @@
+/* Import Google Fonts */
+@import url("//fonts.googleapis.com/css2?family=Candal:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("//fonts.googleapis.com/css2?family=Arial+Black:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("//fonts.googleapis.com/css2?family=Acme:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+/* Heading */
+body h1{
+	font-family: "Candal", sans-serif;
+}
+
+/* Paragraph */
+.encabezado-principal .subtitulo-canal{
+	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+	min-height: 42px;
+	width: 64.5%;
+}
+
+/* Paragraph */
+.seccion-bio p{
+	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+}
+
+/* Heading */
+.seccion-bio .titulo-seccion{
+	font-family: 'Arial Black','Arial Bold',Gadget,sans-serif;
+	transform: translatex(0px) translatey(9px);
+}
+
+/* Heading */
+.seccion-contacto .titulo-seccion{
+	font-family: 'Arial Black','Arial Bold',Gadget,sans-serif;
+}
+
+/* Paragraph */
+.seccion-contacto .descripcion-contacto{
+	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+}
+
+/* Text Area */
+.formulario-anonimo #mensaje{
+	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+}
+
+/* Label */
+.formulario-anonimo .etiqueta-campo{
+	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+}
+
+/* Paragraph */
+.pie-pagina .texto-copyright{
+	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+}
+
+/* Button */
+.formulario-anonimo .boton-enviar{
+	font-family: "Acme", sans-serif;
+}
+
+/* Button */
+.enlace-nav .boton-nav{
+	font-family: "Acme", sans-serif;
+	border-width: 1px;
+}
