@@ -1,63 +1,231 @@
-/* Import Google Fonts */
-@import url("//fonts.googleapis.com/css2?family=Candal:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
-@import url("//fonts.googleapis.com/css2?family=Arial+Black:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
-@import url("//fonts.googleapis.com/css2?family=Acme:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+/* ==========================================
+   IMPORTACIÓN DE FUENTES DE GOOGLE FONTS
+   ========================================== */
+@import url("https://fonts.googleapis.com/css2?family=Candal&family=Acme&display=swap");
 
-/* Heading */
-body h1{
-	font-family: "Candal", sans-serif;
+/* ==========================================
+   VARIABLES Y PALETA DE COLORES (Azul y Celeste)
+   ========================================== */
+:root {
+  --fondo-principal: #0b132b;        /* Azul noche muy oscuro */
+  --fondo-tarjeta: #1c2541;          /* Azul marino profundo */
+  --fondo-campo: #0e1a38;            /* Azul medio para inputs */
+  --celeste-brillante: #48cae4;     /* Celeste principal */
+  --celeste-hover: #90e0ef;         /* Celeste claro para hover */
+  --azul-acento: #0077b6;            /* Azul medio para detalles */
+  --texto-blanco: #f8f9fa;           /* Blanco suave */
+  --texto-secundario: #caf0f8;       /* Celeste pastel suave para textos */
+  --sombra: rgba(0, 0, 0, 0.4);
 }
 
-/* Paragraph */
-.encabezado-principal .subtitulo-canal{
-	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
-	min-height: 42px;
-	width: 64.5%;
+/* ==========================================
+   ESTILOS GENERALES Y BASE
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Paragraph */
-.seccion-bio p{
-	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+body.pagina-inicio {
+  background-color: var(--fondo-principal);
+  color: var(--texto-blanco);
+  font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Heading */
-.seccion-bio .titulo-seccion{
-	font-family: 'Arial Black','Arial Bold',Gadget,sans-serif;
-	transform: translatex(0px) translatey(9px);
+/* ==========================================
+   ENCABEZADO Y NAVEGACIÓN
+   ========================================== */
+.encabezado-principal {
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 30px;
+  padding: 30px 20px;
+  background-color: var(--fondo-tarjeta);
+  border-radius: 16px;
+  border-bottom: 4px solid var(--celeste-brillante);
+  box-shadow: 0 8px 20px var(--sombra);
 }
 
-/* Heading */
-.seccion-contacto .titulo-seccion{
-	font-family: 'Arial Black','Arial Bold',Gadget,sans-serif;
+.titulo-canal {
+  font-family: "Candal", sans-serif;
+  font-size: 3rem;
+  color: var(--celeste-brillante);
+  text-shadow: 0 0 12px rgba(72, 202, 228, 0.4);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
-/* Paragraph */
-.seccion-contacto .descripcion-contacto{
-	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+.subtitulo-canal {
+  font-family: 'Trebuchet MS', sans-serif;
+  color: var(--texto-secundario);
+  font-size: 1.05rem;
+  max-width: 750px;
+  margin: 0 auto 25px auto;
 }
 
-/* Text Area */
-.formulario-anonimo #mensaje{
-	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+/* Menú de Botones de Navegación */
+.menu-navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
 }
 
-/* Label */
-.formulario-anonimo .etiqueta-campo{
-	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+.enlace-nav {
+  text-decoration: none;
 }
 
-/* Paragraph */
-.pie-pagina .texto-copyright{
-	font-family: 'Trebuchet MS','Lucida Grande','Lucida Sans Unicode','Lucida Sans',Tahoma,sans-serif;
+.boton-nav {
+  font-family: "Acme", sans-serif;
+  font-size: 1.1rem;
+  color: var(--fondo-principal);
+  background-color: var(--celeste-brillante);
+  border: 2px solid var(--celeste-brillante);
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Button */
-.formulario-anonimo .boton-enviar{
-	font-family: "Acme", sans-serif;
+.boton-nav:hover {
+  background-color: var(--celeste-hover);
+  border-color: var(--celeste-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(72, 202, 228, 0.4);
 }
 
-/* Button */
-.enlace-nav .boton-nav{
-	font-family: "Acme", sans-serif;
-	border-width: 1px;
+/* ==========================================
+   CONTENIDO PRINCIPAL Y SECCIONES
+   ========================================== */
+.contenido-principal {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.seccion-bio,
+.seccion-contacto {
+  background-color: var(--fondo-tarjeta);
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px var(--sombra);
+  border-left: 5px solid var(--celeste-brillante);
+}
+
+.titulo-seccion {
+  font-family: 'Arial Black', 'Arial Bold', sans-serif;
+  color: var(--celeste-brillante);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.texto-bio,
+.descripcion-contacto {
+  font-family: 'Trebuchet MS', sans-serif;
+  color: var(--texto-secundario);
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.nombre-destacado {
+  color: var(--celeste-hover);
+  font-weight: bold;
+}
+
+.nota-rapida {
+  background-color: rgba(72, 202, 228, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+  border-left: 3px solid var(--celeste-brillante);
+  color: var(--texto-blanco);
+  font-size: 0.95rem;
+}
+
+.etiqueta-nota {
+  color: var(--celeste-brillante);
+}
+
+/* ==========================================
+   FORMULARIO DE CONTACTO ANÓNIMO
+   ========================================== */
+.formulario-anonimo {
+  margin-top: 15px;
+}
+
+.etiqueta-campo {
+  font-family: 'Trebuchet MS', sans-serif;
+  color: var(--celeste-brillante);
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.campo-texto {
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 100%;
+  min-height: 120px;
+  background-color: var(--fondo-campo);
+  color: var(--texto-blanco);
+  border: 2px solid var(--azul-acento);
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campo-texto:focus {
+  border-color: var(--celeste-brillante);
+  box-shadow: 0 0 10px rgba(72, 202, 228, 0.3);
+}
+
+.campo-texto::placeholder {
+  color: #6c757d;
+}
+
+.boton-enviar {
+  font-family: "Acme", sans-serif;
+  font-size: 1.1rem;
+  color: var(--fondo-principal);
+  background-color: var(--celeste-brillante);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  margin-top: 5px;
+}
+
+.boton-enviar:hover {
+  background-color: var(--celeste-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(72, 202, 228, 0.4);
+}
+
+/* ==========================================
+   PIE DE PÁGINA
+   ========================================== */
+.pie-pagina {
+  margin-top: 40px;
+  padding: 15px;
+  text-align: center;
+  color: var(--texto-secundario);
+  font-size: 0.9rem;
+}
+
+.texto-copyright {
+  font-family: 'Trebuchet MS', sans-serif;
+  opacity: 0.8;
 }
